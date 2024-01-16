@@ -2,4 +2,4 @@
 - Created Sample Blog Page and modified CSS from Grav (dangerous_tags issue)
 - Added Reda Care Logo
 - Added decorative image
-  ![](/Screenshot 2024-01-16 at 12-28-14 Test-Blog Grav.png)
+  ![](https://github.com/JakubStraszewski/RedaCare_Internship/blob/main/Screenshot%202024-01-16%20at%2012-28-14%20Test-Blog%20Grav.png)
