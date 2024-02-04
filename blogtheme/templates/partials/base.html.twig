@@ -30,7 +30,7 @@
 	<body>	
 		<nav class="lightBackground">
 			<a href="{{ pages.url }}">
-				<img src="{{ url('theme://images/logo/' ~ theme.logo|first.name)  }}" alt="{{ site.title }}" width="100" height="100">
+				<img src="{% if theme.logo|first.name %}{{ url('theme://images/logo/' ~ theme.logo|first.name)  }}{% else %}{{ url('theme://images/logo/RedaCareLogo_1000_1000px_diagonal_transparent.png') }}{% endif %}" alt="{{ site.title }}" width="100" height="100">
 			</a>
 			{% for page in pages.children %}
 				<a class="menuitem" href="{{ page.url }}">{{ page.title }}</a>
