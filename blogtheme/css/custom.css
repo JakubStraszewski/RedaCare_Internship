@@ -1,0 +1,48 @@
+h1, h2 {
+	text-align: center;
+}
+#main {
+	padding-left: 25%;
+	padding-right: 25%;
+}
+.post_left {
+	margin-bottom: 1.0em;
+	border: 0.2em solid #cfcfcf;
+	border-radius: 0.5em;
+}
+.post_left div {
+	margin: 1.0em;
+	clear: left;
+	float: left;
+}
+
+button {
+	border: none;
+}
+
+nav {
+	border-bottom: 0.1em solid #cfcfcf;
+	width: 100%;
+	position: sticky;
+	top: 0.0em;
+	display: flex;
+	justify-content: space-around;
+}
+select {
+	border: none;
+	font-weight: bold;
+}
+.regular {
+	padding: 0.5em;
+	text-align: center;
+	margin: 0%;
+	font-weight: bold;
+}
+nav a {
+	text-align: center;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	margin: 0.5em;
+}

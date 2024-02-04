@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+		{% block stylesheets %}
+			{% do assets.addCss('theme://css/custom.css') %}
+		{% endblock %}
+		{% block assets deferred %}
+			{{ assets.css()|raw }}
+		{% endblock %}
+			<style>
+				.lightBackground {
+					background-color: {{ theme.colors.light_color|e }};
+				}
+				.regularBackground {
+					background-color: {{ theme.colors.main_color|e }};
+				}
+				.darkBackground {
+					background-color: {{ theme.colors.dark_color|e }};
+				}
+				.menuitem {
+					background-color: {{ theme.colors.light_color|e }};
+				}
+				.menuitem:hover {
+					background-color: {{ theme.colors.main_color|e }};
+				}
+			</style>
+	</head>
+	<body>	
+		<nav class="lightBackground">
+			<a href="{{ pages.url }}">
+				<img src="{{ url('theme://images/logo/c7e67d72-aabc-42c1-a47e-710ad9149de3_large.png')  }}" alt="{{ site.title }}" width="100" height="100">
+			</a>
+			{% for page in pages.children %}
+				<a class="menuitem" href="{{ page.url }}">{{ page.title }}</a>
+			{% endfor %}
+		</nav>
+		<div id="main">
+		{% block content %}
+		{% endblock %}
+		</div>
+	</body>
+</html>

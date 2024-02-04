@@ -1,0 +1,16 @@
+enabled: true
+colors:
+  light_color: '#DBFFF6'
+  main_color: '#AFDFC4'
+  dark_color: '#5F7F64'
+production-mode: true
+grid-size: grid-lg
+header-fixed: true
+header-animated: true
+header-dark: false
+header-transparent: false
+sticky-footer: true
+blog-page: '/blog'
+spectre:
+  exp: false
+  icons: false
