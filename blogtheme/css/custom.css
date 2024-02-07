@@ -5,15 +5,45 @@ h1, h2 {
 	padding-left: 25%;
 	padding-right: 25%;
 }
-.post_left {
-	margin-bottom: 1.0em;
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+.post_regular {
+	margin: 1.0em;
 	border: 0.2em solid #cfcfcf;
 	border-radius: 0.5em;
 }
-.post_left div {
+
+.post_regular a {
+	display: flex;
+	justify-content: space-between;
+}
+
+.post_regular:hover {
+	animation-duration: 0.5s;
+	animation-name: marginatory;
+	margin: 0.1em;
+}
+
+.embedded {
+	display: flex;
+}
+
+@keyframes marginatory {
+	from {
+		margin: 1.0em;
+	}
+	to {
+		margin: 0.25em;
+	}
+}
+
+.post_regular div {
 	margin: 1.0em;
-	clear: left;
-	float: left;
+	flex-direction: column;
 }
 
 button {
