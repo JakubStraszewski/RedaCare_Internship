@@ -14,6 +14,11 @@ form:
   validation: loose
 
   fields:
+    
+    homePage:
+        type: text
+        label: Title of home page (for displaying blog posts)
+        default: "Home"
 
     asset_section:
       type: section
@@ -27,6 +32,15 @@ form:
         destination: 'theme://images/logo'
         accept:
             - image/*
+    
+    customCss:
+        type: file
+        label: Custom CSS
+        help: A custom styling file for the site.
+        destination: 'theme://css/custom'
+        accept:
+            - .css
+    
     
     color_section:
       type: section

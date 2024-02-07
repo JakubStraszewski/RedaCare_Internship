@@ -5,6 +5,7 @@
 		<title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
 		{% block stylesheets %}
 			{% do assets.addCss('theme://css/custom.css') %}
+			{% if theme.customCss|first.name %}{% do assets.addCss(url('theme://css/custom/' ~ theme.customCss|first.name)) %}{% endif %}
 		{% endblock %}
 		{% block assets deferred %}
 			{{ assets.css()|raw }}
@@ -22,9 +23,16 @@
 				.menuitem {
 					background-color: {{ theme.colors.light_color|e }};
 				}
+				.postColors {
+					background-color: {{ theme.colors.light_color|e }};
+				}
 				.menuitem:hover {
 					background-color: {{ theme.colors.main_color|e }};
 				}
+				.postColors:hover {
+					background-color: white;
+				}
+				
 			</style>
 	</head>
 	<body>	
@@ -39,6 +47,30 @@
 		<div id="main">
 		{% block content %}
 		{% endblock %}
+		{% if theme.homePage == page.title %}
+			{% set currentPostIndex = 0 %}
+			{% for post in page.children %}
+				<div class="post_regular">	
+					<a class="postColors" href={{ post.url }}>
+						{% if currentPostIndex % 2 == 0 %}
+							{% if post.media|first.url %}
+								<img src="{{ post.media|first.url|e }}" alt="{{ post.media|first.url|e }}" width="200" height="200">
+							{% endif %}
+						{% endif %}
+						<div>
+							<h2 class="regular">{{ post.title|e }}</h2>
+							<p class="embedded">{{ post.summary(100)|raw }}</p>
+						</div>
+						{% if currentPostIndex % 2 == 1 %}
+							{% if post.media|first.url %}
+								<img src="{{ post.media|first.url|e }}" alt="{{ post.media|first.url|e }}" width="200" height="200">
+							{% endif %}
+						{% endif %}
+					</a>
+				</div>
+				{% set currentPostIndex = currentPostIndex + 1 %}
+			{% endfor %}
+		{% endif %}
 		</div>
 	</body>
 </html>
